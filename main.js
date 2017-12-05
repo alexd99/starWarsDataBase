@@ -261,8 +261,8 @@ function getCharacter(characterId){
         $('.edited').html(character.edited);
 
         $('.filmAppearancesTitle').html('Film Appearance(s)');
-        $('.vehiclesTitle').html('Vehicles');
-        $('.starShipsTitle').html('Star Ships');
+        $('.vehiclesTitle').html('Vehicle(s)');
+        $('.starShipsTitle').html('Star Ship(s)');
 
     });
 }
