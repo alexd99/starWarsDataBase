@@ -1,0 +1,237 @@
+html{
+    background: black;
+    color: white;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    color: #FCE852;
+    text-decoration: none;
+    cursor: pointer;
+}
+.timeInfo, .gatherInfo{
+    font-size: 20px;
+}
+.gatherInfo{
+    margin-bottom: 0;
+}
+.mainTitle{
+    -webkit-text-stroke: 1px #FCE852;
+    color: black;
+    font-size: 45px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+.list{
+    height: 25px;
+    font-size: 20px;
+}
+#filmNameList{
+    width: 295px;
+}
+.filmTopRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.filmTopRow > h3{
+    font-size: 1.3em;
+}
+.filmDirector{
+    margin: auto 50px;
+}
+#characterNameList{
+    width: 235px;
+}
+#speciesList{
+    width: 175px;
+}
+#planetList{
+    width: 180px;
+}
+.selectLabel{
+    font-size: 25px;
+    margin-right: 10px;
+}
+.selectBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.filmBox{
+    border: 1px solid #fff;
+    width: 98%;
+}
+.filmScroll{
+    font-size: 1.3em;
+    margin: auto 5px;
+}
+.characterBox{
+    border: 1px solid #990000;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 10px;
+}
+.characterInfo{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.characterInfoMiddleColumn{
+    margin: auto 20px;
+}
+.filmAppearancesMiddle{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.mainInfo{
+    font-size: 15px;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+}
+.footer > div{
+    display: flex;
+    flex-direction: column;
+    margin: auto 15px;
+}
+.speciesFooter, .planetFooter{
+    display: flex;
+    justify-content: center;
+}
+.createdBox{
+    margin-right: 10px;
+}
+.CreatedAndEditedTitle{
+    margin: 15px auto 0 auto;
+}
+.characterInfo > div{
+    text-align: left;
+}
+.underline{
+    text-decoration: underline;
+    text-align: left;
+}
+.topContentTitle{
+    margin-top: -5px
+}
+.mainContentBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    flex-wrap: wrap;
+}
+.filmAppearancesMain{
+    margin-left: 25px;
+}
+#filmAppearances > h3:first-child{
+    margin-top: 0;
+}
+.characterInfoBox{
+    margin-right: 25px;
+}
+.filmAppearancesContent{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.filmInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.selectBox{
+    margin-top: 5px;
+}
+.contentBox{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.speciesInfo > div{
+    display: flex;
+    flex-direction: column;
+}
+.planetInfo > div{
+    display: flex;
+    flex-direction: column;
+}
+.speciesBox{
+    width: 98%;
+    border: 1px solid #1F26BF;
+    margin-bottom: 30px;
+}
+.middleColumn{
+    margin: auto 80px;
+}
+.speciesBottomBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    flex-wrap: wrap;
+}
+.firstBox{
+    margin-right: 30px;
+}
+.planetBox{
+    width: 98%;
+    border: 1px solid #87C051;
+    margin-bottom: 30px;
+}
+.starShipBox{
+    width: 98%;
+    border: 1px solid #FFEE0F;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.starCostInCredits{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#starShipList{
+    width: 285px;
+}
+.starShipMoreRightColumn{
+    margin-left: 80px;
+}
+.vehicleBox{
+    width: 98%;
+    border: 1px solid #D210D0;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#vehicleList{
+    width: 280px;
+}

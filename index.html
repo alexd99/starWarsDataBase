@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Star Wars Data Base</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+
+</head>
+<body onload="runAPI()">
+
+<h1 class="mainTitle">Welcome To The Star Wars Data Base</h1>
+<p class="gatherInfo">Information is from <a target="_blank" href="https://swapi.co">swapi.co</a></p>
+<p class="timeInfo">This data base uses military time and ISO 8601(YYYY-MM-DD) format for dates</p>
+
+<div class="filmBox">
+    <div class="selectBox characterList">
+        <label for="filmNameList" id="filmNameListLabel" class="selectLabel">Select A Film</label>
+        <select id="filmNameList" class="list" onchange="getFilm(this.value);"></select>
+    </div>
+
+    <h2 class="filmTitle"></h2>
+    <h3 class="filmScroll"></h3>
+
+    <div class="filmInfo">
+        <div class="filmTopRow">
+            <h3 class="filmReleaseDate"></h3>
+            <h3 class="filmDirector"></h3>
+            <h3 class="filmProducer"></h3>
+        </div>
+        <div class="filmBottomRow mainContentBox">
+
+            <div class="filmCharactersBox contentBox">
+                <h2 class="filmCharactersTitle underline topContentTitle"></h2>
+                <div class="charactersSpeciesContent">
+                    <div class="filmCharacters">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="filmSpeciesBox contentBox">
+                <h2 class="filmsSpeciesTitle underline topContentTitle"></h2>
+                <div class="filmSpeciesContent">
+                    <div class="filmSpecies">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="filmPlanetsBox contentBox">
+                <h2 class="filmsPlanetsTitle underline topContentTitle"></h2>
+                <div class="filmPlanetContent">
+                    <div class="filmPlanets">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="starShipsPlanetsBox contentBox">
+                <h2 class="filmStarShipsTitle underline topContentTitle"></h2>
+                <div class="starShipsPlanetContent">
+                    <div class="filmStarShips">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="vehiclesPlanetsBox contentBox">
+                <h2 class="filmVehiclesTitle underline topContentTitle"></h2>
+                <div class="vehiclesPlanetContent">
+                    <div class="filmVehicles">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filmFooter footer">
+            <div class="filmCreatedBox">
+                <p class="filmCreatedTitle CreatedAndEditedTitle"></p>
+                <p class="filmCreated"></p>
+            </div>
+            <div class="filmEditedBox">
+                <p class="filmEditedTitle CreatedAndEditedTitle"></p>
+                <p class="filmEdited"></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="characterBox">
+    <div class="selectBox characterList">
+        <label for="characterNameList" id="characterNameListLabel" class="selectLabel">Select A Character</label>
+        <select id="characterNameList" class="list" onchange="getCharacter(this.value);"></select>
+    </div>
+
+    <h2 class="characterName"></h2>
+    <h2 class="born"></h2>
+    <h2 class="home"></h2>
+    <h2 class="films"></h2>
+
+    <div class="characterContent mainContentBox">
+        <div class="characterInfoBox">
+            <h2 class="underline characterAppearance topContentTitle"></h2>
+            <div class="characterInfo">
+                <div class="characterInfoLeftColumn">
+                    <h3 class="species"></h3>
+                    <h3 class="gender"></h3>
+                    <h3 class="eyes"></h3>
+                </div>
+
+                <div class="characterInfoMiddleColumn">
+                    <h3 class="hair"></h3>
+                    <h3 class="skin"></h3>
+                    <h3 class="height"></h3>
+                </div>
+                <div class="characterInfoRightColumn">
+                    <h3 class="mass"></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="filmAppearancesMain contentBox">
+            <h2 class="filmAppearancesTitle underline topContentTitle"></h2>
+            <div class="filmAppearancesContent">
+                <div class="filmAppearances" id="filmAppearances">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="vehiclesMain contentBox">
+            <h2 class="vehiclesTitle underline topContentTitle"></h2>
+            <div class="vehiclesContent">
+                <div class="vehicles">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="starShipsMain contentBox">
+            <h2 class="starShipsTitle underline topContentTitle"></h2>
+            <div class="starShipsContent">
+                <div class="starShips">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="characterFooter footer">
+        <div class="createdBox">
+            <p class="createdTitle CreatedAndEditedTitle"></p>
+            <p class="created"></p>
+        </div>
+        <div class="editedBox">
+            <p class="editedTitle CreatedAndEditedTitle"></p>
+            <p class="edited"></p>
+        </div>
+    </div>
+</div>
+
+<div class="speciesBox">
+    <div class="selectBox speciesList">
+        <label for="speciesList" id="speciesListLabel" class="selectLabel">Select A Species</label>
+        <select id="speciesList" class="list" onchange="getSpecies(this.value);"></select>
+    </div>
+
+    <h2 class="speciesName"></h2>
+    <h2 class="speciesHomeWorld"></h2>
+    <div class="speciesInfo info">
+        <div class="speciesLeftColumn">
+            <h3 class="speciesClass"></h3>
+            <h3 class="speciesDes"></h3>
+            <h3 class="speciesLanguage"></h3>
+        </div>
+
+        <div class="speciesMiddleColumn middleColumn">
+            <h3 class="speciesLife"></h3>
+            <h3 class="speciesHeight"></h3>
+            <h3 class="speciesEyes"></h3>
+        </div>
+
+        <div class="speciesRightColumn">
+            <h3 class="speciesHair"></h3>
+            <h3 class="speciesSkin"></h3>
+        </div>
+    </div>
+    <div>
+    </div>
+
+    <div class="speciesContent mainContentBox">
+        <div class="speciesPeopleBox firstBox">
+            <h2 class="speciePeopleTitle underline"></h2>
+            <div class="speciesPeople"></div>
+        </div>
+        <div class="speciesFilmBox">
+            <h2 class="specieFilmTitle underline"></h2>
+            <div class="speciesFilms"></div>
+        </div>
+    </div>
+
+    <div class="speciesFooter footer">
+        <div class="speciescCreatedBox">
+            <p class="speciesCreatedTitle CreatedAndEditedTitle"></p>
+            <p class="speciesCreated"></p>
+        </div>
+        <div class="speciesEditedBox">
+            <p class="speciesEditedTitle CreatedAndEditedTitle"></p>
+            <p class="speciesEdited"></p>
+        </div>
+    </div>
+</div>
+
+<div class="planetBox">
+    <div class="selectBox planetsList">
+        <label for="planetList" id="planetListLabel" class="selectLabel">Select A Planet</label>
+        <select id="planetList" class="list" onchange="getPlanet(this.value);"></select>
+    </div>
+
+    <h2 class="planetName"></h2>
+    <div class="planetInfo info">
+        <div class="planetLeftColumn">
+            <h3 class="planetClimate"></h3>
+            <h3 class="planetTeriann"></h3>
+            <h3 class="planetWater"></h3>
+        </div>
+
+        <div class="planetMiddleColumn middleColumn">
+            <h3 class="planetPopulation"></h3>
+            <h3 class="planetRotationPeriod"></h3>
+            <h3 class="planetOrbitalPeriod"></h3>
+        </div>
+
+        <div class="planetRightColumn">
+            <h3 class="planetDiameter"></h3>
+            <h3 class="planetGravity"></h3>
+        </div>
+    </div>
+    <div>
+    </div>
+
+    <div class="planetContent mainContentBox">
+        <div class="planetPeopleBox firstBox">
+            <h2 class="planetPeopleTitle underline"></h2>
+            <div class="planetPeople"></div>
+        </div>
+        <div class="planetFilmBox">
+            <h2 class="planetFilmTitle underline"></h2>
+            <div class="planetFilms"></div>
+        </div>
+    </div>
+
+    <div class="planetFooter footer">
+        <div class="planetcCreatedBox">
+            <p class="planetCreatedTitle CreatedAndEditedTitle"></p>
+            <p class="planetCreated"></p>
+        </div>
+        <div class="planetEditedBox">
+            <p class="planetEditedTitle CreatedAndEditedTitle"></p>
+            <p class="planetEdited"></p>
+        </div>
+    </div>
+</div>
+
+<div class="starShipBox">
+    <div class="selectBox starShipsList">
+        <label for="starShipList" id="starShipListLabel" class="selectLabel">Select A Star Ship</label>
+        <select id="starShipList" class="list" onchange="getStarShip(this.value);"></select>
+    </div>
+
+    <h2 class="starShipName"></h2>
+    <h2 class="starShipModel"></h2>
+    <h2 class="starShipClass"></h2>
+    <h2 class="starShipManufacturer"></h2>
+
+    <div class="starShipInfo info">
+        <div class="starShipLeftColumn">
+            <h3 class="starShipHyperdriveRating"></h3>
+            <h3 class="starShipLength"></h3>
+            <h3 class="starShipMaxCargoCapacity"></h3>
+        </div>
+
+        <div class="starShipMiddleColumn middleColumn">
+            <h3 class="starShipConsumables"></h3>
+            <h3 class="starShipCrew"></h3>
+            <h3 class="starShipPassengers"></h3>
+        </div>
+
+        <div class="starShipRightColumn">
+            <h3 class="starShipMaxAtmospheringSpeed"></h3>
+            <h3 class="starShipMGLT"></h3>
+            <h3 class="starCostInCredits"></h3>
+        </div>
+
+        <div class="starShipMoreRightColumn">
+            <h3 class="starCostInUSD"></h3>
+        </div>
+    </div>
+    <div>
+    </div>
+
+    <div class="starShipContent mainContentBox">
+        <div class="starShipPeopleBox firstBox">
+            <h2 class="starShipPilotTitle underline"></h2>
+            <div class="starShipPilot"></div>
+        </div>
+        <div class="starShipFilmBox">
+            <h2 class="starShipFilmTitle underline"></h2>
+            <div class="starShipFilms"></div>
+        </div>
+    </div>
+
+    <div class="starShipFooter footer">
+        <div class="starShipCreatedBox">
+            <p class="starShipCreatedTitle CreatedAndEditedTitle"></p>
+            <p class="starShipCreated"></p>
+        </div>
+        <div class="starShipEditedBox">
+            <p class="starShipEditedTitle CreatedAndEditedTitle"></p>
+            <p class="starShipEdited"></p>
+        </div>
+    </div>
+</div>
+
+<div class="vehicleBox">
+    <div class="selectBox vehiclesList">
+        <label for="vehicleList" id="vehicleListLabel" class="selectLabel">Select A Vehicle</label>
+        <select id="vehicleList" class="list" onchange="getVehicle(this.value);"></select>
+    </div>
+
+    <h2 class="vehicleName"></h2>
+    <h2 class="vehicleModel"></h2>
+    <h2 class="vehicleClass"></h2>
+    <h2 class="vehicleManufacturer"></h2>
+
+    <div class="vehicleInfo info">
+        <div class="vehicleLeftColumn">
+            <h3 class="vehicleLength"></h3>
+            <h3 class="vehicleMaxCargoCapacity"></h3>
+            <h3 class="vehicleConsumables"></h3>
+        </div>
+
+        <div class="vehicleMiddleColumn middleColumn">
+            <h3 class="vehicleCrew"></h3>
+            <h3 class="vehiclePassengers"></h3>
+            <h3 class="vehicleMaxAtmospheringSpeed"></h3>
+        </div>
+
+        <div class="vehicleRightColumn">
+            <h3 class="vehicleCostInCredits"></h3>
+            <h3 class="vehicleCostInUSD"></h3>
+        </div>
+    </div>
+    <div>
+    </div>
+
+    <div class="vehicleContent mainContentBox">
+        <div class="vehiclePeopleBox firstBox">
+            <h2 class="vehiclePilotTitle underline"></h2>
+            <div class="vehiclePilot"></div>
+        </div>
+        <div class="vehicleFilmBox">
+            <h2 class="vehicleFilmTitle underline"></h2>
+            <div class="vehicleFilms"></div>
+        </div>
+    </div>
+
+    <div class="vehicleFooter footer">
+        <div class="vehicleCreatedBox">
+            <p class="vehicleCreatedTitle CreatedAndEditedTitle"></p>
+            <p class="vehicleCreated"></p>
+        </div>
+        <div class="vehicleEditedBox">
+            <p class="vehicleEditedTitle CreatedAndEditedTitle"></p>
+            <p class="vehicleEdited"></p>
+        </div>
+    </div>
+</div>
+
+<p>*Non-Canon</p>
+
+</body>
+</html>
+
+
+
+
