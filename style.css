@@ -146,9 +146,6 @@ a{
 #filmAppearances > h3:first-child{
     margin-top: 0;
 }
-.characterInfoBox{
-    margin-right: 25px;
-}
 .filmAppearancesContent{
     display: flex;
     flex-direction: row;

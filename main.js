@@ -260,7 +260,7 @@ function getCharacter(characterId){
         $('.editedTitle').html('Character Edited');
         $('.edited').html(character.edited);
 
-        $('.filmAppearancesTitle').html('Film Appearances');
+        $('.filmAppearancesTitle').html('Film Appearance(s)');
         $('.vehiclesTitle').html('Vehicles');
         $('.starShipsTitle').html('Star Ships');
 
@@ -335,8 +335,8 @@ function getSpecies(speciesId) {
         $('.speciesEditedTitle').html('Species Edited');
         $('.speciesEdited').html(species.edited);
 
-        $('.speciePeopleTitle').html('Characters Of This Race');
-        $('.specieFilmTitle').html('Films This Race is in');
+        $('.speciePeopleTitle').html('Character(s) Of This Race');
+        $('.specieFilmTitle').html('Film(s) This Race is in');
 
 
     });
@@ -398,8 +398,8 @@ function getPlanet(planetId) {
 
         $('.planetGravity').html('Gravity:  ' + planet.gravity + ' G(s)');
 
-        $('.planetPeopleTitle').html('Characters From Here');
-        $('.planetFilmTitle').html('Films This Planet is in');
+        $('.planetPeopleTitle').html('Character(s) From Here');
+        $('.planetFilmTitle').html('Film(s) This Planet is in');
 
         $('.planetCreatedTitle').html('Planet Created');
         $('.planetCreated').html(planet.created);
@@ -500,8 +500,8 @@ function getStarShip(starShipId) {
         $('.starShipEditedTitle').html('Star Ship Edited');
         $('.starShipEdited').html(starShips.edited);
 
-        $('.starShipPilotTitle').html('Pilots');
-        $('.starShipFilmTitle').html('Films This Star Ship is in');
+        $('.starShipPilotTitle').html('Pilot(s)');
+        $('.starShipFilmTitle').html('Film(s) This Star Ship is in');
 
 
     });
@@ -587,8 +587,8 @@ function getVehicle(vehiclesId) {
             $('.vehicleCostInUSD').html('Cost: ' + vehicle.cost_in_credits * 1.50 + ' USD*');
         }
 
-        $('.vehiclePilotTitle').html('Pilots');
-        $('.vehicleFilmTitle').html('Films This Vehicle is in');
+        $('.vehiclePilotTitle').html('Pilot(s)');
+        $('.vehicleFilmTitle').html('Film(s) This Vehicle is in');
 
         $('.vehicleCreatedTitle').html('Vehicle Created');
         $('.vehicleCreated').html(vehicle.created);
